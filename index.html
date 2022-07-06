@@ -1,0 +1,21 @@
+<iframe src="/code.html" frameborder="0">
+
+</iframe>
+
+<script src="/qecode.js"></script>
+<script type="text/javascript">
+setTimeout(()=>{
+
+  var iframe = document.getElementsByTagName('iframe')[0].contentDocument || document.getElementsByTagName('iframe')[0].contentWindow;
+  var qrImg = iframe.getElementById('qrcode');
+ 
+  var qrcode = new QRCode(qrImg, {
+    text: location.href,
+    width: 128,
+	height: 128,
+	colorDark : "#000000",
+	colorLight : "#ffffff",
+	correctLevel : QRCode.CorrectLevel.H
+});
+}, 300);
+</script>
